@@ -2,14 +2,14 @@
 
 repos:
   - repo: https://github.com/psf/black
-    rev: ''
+    rev: '24.4.2'
     hooks:
       - id: black
         name: Black Formatter
         language_version: python3.12 
 
   - repo: https://github.com/PyCQA/flake8
-    rev: ''  
+    rev: '7.1.0'  
     hooks:
       - id: flake8
         name: Flake8 Linter
@@ -17,7 +17,7 @@ repos:
         language_version: python3.12 
 
   - repo: https://github.com/pre-commit/mirrors-pylint
-    rev: ''
+    rev: 'v3.0.0a5'
     hooks:
       - id: pylint
         name: Pylint Linter
@@ -25,14 +25,14 @@ repos:
         args: [--max-line-length=88]  # Match Black's line length
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: ''  
+    rev: 'v1.11.1'  
     hooks:
       - id: mypy
         name: MyPy Type Checker
         language_version: python3.12
 
   - repo: https://github.com/pre-commit/mirrors-isort
-    rev: ''
+    rev: 'v5.10.1'
     hooks:
       - id: isort
         name: isort Import Sorter
