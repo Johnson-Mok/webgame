@@ -13,8 +13,6 @@ python = "^3.12.4"
 [tool.poetry.dev-dependencies]
 black = "^24.4.2"
 flake8 = "^7.1.0"
-flake8-bugbear = "^24.4.26"
-flake8-comprehensions = "^3.15.0"
 pylint = "^3.2.6"
 mypy = "^1.11.1"
 isort = "^5.13.2"
@@ -26,13 +24,10 @@ target-version = ["py38"]
 
 [tool.flake8]
 max-line-length = 88
-extend-ignore = ["E203"]
+extend-ignore = ["C0301","E203","E501"]
 
 [tool.isort]
 profile = "black"
-
-[tool.pylint]
-max-line-length = 88
 
 [tool.mypy]
 python_version = "3.8"

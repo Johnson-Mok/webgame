@@ -4,15 +4,18 @@ repos:
     hooks:
       - id: black
         name: Black Formatter
-        language_version: python3.12 
+        language_version: python3.12
+        args: [--line-length=88]
 
   - repo: https://github.com/PyCQA/flake8
     rev: '7.1.0'  
     hooks:
       - id: flake8
         name: Flake8 Linter
-        additional_dependencies: [flake8-bugbear, flake8-comprehensions]
-        language_version: python3.12 
+        language_version: python3.12
+        args:
+          - --max-line-length=88
+          - --extend-ignore=C0301,E203,E501
 
   - repo: https://github.com/pre-commit/mirrors-pylint
     rev: 'v3.0.0a5'
@@ -20,7 +23,8 @@ repos:
       - id: pylint
         name: Pylint Linter
         language_version: python3.12  
-        args: [--max-line-length=88]  # Match Black's line length
+        args:
+          - --rcfile=.pylintrc  # Specify the configuration file
 
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: 'v1.11.1'  
