@@ -1,0 +1,5 @@
+[FORMAT]
+max-line-length = 88
+
+[MESSAGES CONTROL]
+disable = C0114, F0002, C0301  # Disable the missing module docstring warning
