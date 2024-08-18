@@ -1,6 +1,6 @@
 import base64
 import os
-from typing import Any, List
+from typing import Any, Dict, List
 
 import streamlit as st
 
@@ -43,6 +43,7 @@ class Quiz:
         """
         self.questions: List[Question] = []
         self.score: int = 0
+        self.image_cache: Dict[str, str] = {}
 
     def load_questions_from_list(self, questions_list: Any) -> None:
         """
@@ -80,7 +81,7 @@ class Quiz:
 
     def get_image_base64(self, image_path: str) -> str:
         """
-        Returns the base64 encoded string of an image.
+        Returns the base64 encoded string of an image, with caching to improve performance.
 
         Args:
             image_path (str): The path to the image.
@@ -88,9 +89,13 @@ class Quiz:
         Returns:
             str: The base64 encoded string of the image.
         """
+        if image_path in self.image_cache:
+            return self.image_cache[image_path]
         if os.path.exists(image_path):
             with open(image_path, "rb") as image_file:
-                return base64.b64encode(image_file.read()).decode()
+                encoded = base64.b64encode(image_file.read()).decode()
+                self.image_cache[image_path] = encoded
+                return encoded
         return ""
 
     def display_choice(
