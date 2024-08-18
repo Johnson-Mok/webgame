@@ -119,6 +119,7 @@ class Quiz:
         """
         Starts the quiz, prompts the user to answer each question, and displays the final score.
         """
+        st.write(st.session_state.current_question)
         if st.session_state.current_question < len(self.questions):
             current_q = self.questions[st.session_state.current_question]
             self.display_question(current_q.prompt)
@@ -133,7 +134,6 @@ class Quiz:
             col1, col2 = st.columns([8, 2])
             with col2:
                 if st.button("Next Question", key="next_question"):
-                    st.session_state.current_question += 1
                     st.rerun()
         else:
             st.write(
