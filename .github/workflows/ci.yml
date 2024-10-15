@@ -1,0 +1,58 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.12'
+
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          echo 'export PATH="$HOME/.local/bin:$PATH"' >> $GITHUB_ENV
+          poetry --version
+
+      - name: Install all dependencies (including dev)
+        run: |
+          poetry install
+
+      - name: Run pre-commit hooks
+        run: |
+          poetry run pre-commit run
+
+      - name: Run tests with pytest
+        run: |
+          poetry run pytest --cov=src tests/
+
+      - name: Build Docker image
+        run: |
+          docker build -t my_streamlit_app .
+
+      - name: Run Docker container
+        run: |
+          docker run -d -p 8501:8501 --name test_app my_streamlit_app
+
+      - name: Test Docker container
+        run: |
+          sleep 10  # Wait for the app to start
+          curl -f http://localhost:8501  # Check if the app is running
+
+      - name: Stop Docker container
+        run: |
+          docker stop test_app
+          docker rm test_app
