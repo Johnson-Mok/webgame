@@ -33,7 +33,7 @@ jobs:
 
       - name: Run pre-commit hooks
         run: |
-          poetry run pre-commit run --all-files
+          poetry run pre-commit .
 
       - name: Run tests with pytest
         run: |
