@@ -1,27 +1,42 @@
-questions = [
+QUESTIONS = [
     {
         "prompt": "What is the capital of France?",
-        "options": ["Berlin", "Paris", "Rome", "Madrid"],
-        "answer": 2,
+        "options": [
+            ("Berlin.jpg", "Berlin"),
+            ("Paris.jpg", "Paris"),
+            ("Rome.jpg", "Rome"),
+            ("Madrid.jpg", "Madrid"),
+        ],
+        "answer": "Paris",
     },
     {
         "prompt": "Which planet is known as the Red Planet?",
-        "options": ["Earth", "Mars", "Jupiter", "Saturn"],
-        "answer": 2,
+        "options": [
+            ("Earth.jpg", "Earth"),
+            ("Mars.jpg", "Mars"),
+            ("Jupiter.jpg", "Jupiter"),
+            ("Saturn.jpg", "Saturn"),
+        ],
+        "answer": "Mars",
     },
     {
         "prompt": "Who wrote 'To Kill a Mockingbird'?",
         "options": [
-            "Harper Lee",
-            "Mark Twain",
-            "Ernest Hemingway",
-            "F. Scott Fitzgerald",
+            ("Earth.jpg", "Harper Lee"),
+            ("Earth.jpg", "Mark Twain"),
+            ("Earth.jpg", "Ernest Hemingway"),
+            ("Earth.jpg", "F. Scott Fitzgerald"),
         ],
-        "answer": 1,
+        "answer": "Harper Lee",
     },
     {
         "prompt": "What is the largest mammal?",
-        "options": ["Elephant", "Blue Whale", "Giraffe", "Rhino"],
-        "answer": 2,
+        "options": [
+            ("Earth.jpg", "Elephant"),
+            ("Earth.jpg", "Blue Whale"),
+            ("Earth.jpg", "Giraffe"),
+            ("Earth.jpg", "Rhino"),
+        ],
+        "answer": "Blue Whale",
     },
 ]
