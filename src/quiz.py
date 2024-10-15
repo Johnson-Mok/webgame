@@ -23,18 +23,6 @@ class Question:
         self.options = options
         self.answer = answer
 
-    def check_answer(self, user_answer: int) -> bool:
-        """
-        Checks if the provided answer is correct.
-
-        Args:
-            user_answer (int): The index (1-based) of the user's answer.
-
-        Returns:
-            bool: True if the user's answer is correct, False otherwise.
-        """
-        return user_answer == self.answer
-
 
 class Quiz:
     def __init__(self) -> None:
