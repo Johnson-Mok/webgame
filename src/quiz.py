@@ -124,7 +124,6 @@ class Quiz:
         """
         Starts the quiz, prompts the user to answer each question, and displays the final score.
         """
-        st.write(st.session_state.current_question)
         if st.session_state.current_question < len(self.questions):
             current_q = self.questions[st.session_state.current_question]
             self.display_question(current_q.prompt)
