@@ -21,7 +21,7 @@ chmod +x run.sh
 - [x] Make the app deployable on docker (WIP run.sh and Dockerfile). To run use the git bash terminal and execute './run.sh'
 
 ### Enhancements
-- [ ] Insert new questions
+- [x] Insert new questions
 
 ### Technical Debt
 - [ ]
