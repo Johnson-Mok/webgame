@@ -1,5 +1,21 @@
 # webgame
 
+## Table of Contents
+1. [Collaborate](#collaborate)
+   - [Prerequisites](#prerequisites)
+   - [Project Setup](#project-setup)
+   - [Install Pre-commit Hooks](#install-pre-commit-hooks)
+2. [Build and Containerize the Web Game](#build-and-containerize-the-web-game)
+   - [Steps to Build the Container](#steps-to-build-the-container)
+3. [Way of Working](#way-of-working)
+4. [Backlog](#backlog)
+   - [Pipeline](#pipeline)
+   - [Core](#core)
+   - [Enhance User Engagement](#enhance-user-engagement)
+   - [User Choice & Difficulty](#user-choice--difficulty)
+   - [Additional Features](#additional-features)
+   - [Advanced Gamification](#advanced-gamification)
+
 ## Collaborate
 
 ### Prerequisites
@@ -27,6 +43,12 @@ poetry install
 ```
 poetry shell
 ```
+5. **Install Pre-commit Hooks**: 
+   - We use `pre-commit` hooks to ensure code quality before commits are made. Install the pre-commit hooks after setting up the project:
+     ```bash
+     poetry run pre-commit install
+     ```
+   - This will run checks automatically before each commit, ensuring compliance with code style and standards.
 
 ## Build and Containerize the Web Game
 To containerize and deploy the web game, Docker is required. Ensure Docker Desktop is running before proceeding with the steps below.
@@ -50,17 +72,10 @@ When contributing to this project, follow these Git guidelines to ensure a smoot
 1. **No Commits to Main**: 
    - Direct commits to the `main` branch are prohibited. Always create a new branch for your feature, bug fix, or enhancement. Use a descriptive name for your branch (e.g., `feat/add-login`, `bugfix/fix-header`).
 
-2. **Install Pre-commit Hooks**: 
-   - We use `pre-commit` hooks to ensure code quality before commits are made. Install the pre-commit hooks after setting up the project:
-     ```bash
-     poetry run pre-commit install
-     ```
-   - This will run checks automatically before each commit, ensuring compliance with code style and standards.
-
-3. **PRs Should Satisfy CI Before Merging**:
+2. **PRs Should Satisfy CI Before Merging**:
    - All pull requests (PRs) must pass Continuous Integration (CI) checks (e.g., tests, linting) before being merged. Ensure that your code passes all tests and meets quality requirements.
 
-4. **Commit Messages and PR Messages**:
+3. **Commit Messages and PR Messages**:
    - Keep commit messages and pull request descriptions clear, concise, and meaningful. Each commit message should summarize the change (e.g., `fix: resolve issue with navbar layout` or `feat: add user authentication system`).
    - PR descriptions should explain what changes have been made and why, with enough detail for others to review effectively.
    - Update the Backlog in the `README.md`.
