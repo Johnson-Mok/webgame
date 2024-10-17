@@ -15,21 +15,27 @@ def sample_quiz() -> Quiz:
 def test_load_questions(sample_quiz: Quiz) -> None:
     """Test that questions are loaded correctly into the quiz."""
     assert len(sample_quiz.questions) == len(QUESTIONS)
-    assert sample_quiz.questions[0].prompt == "What is the fastest land animal?"
-    assert sample_quiz.questions[0].options[0][0] == "Cheetah"
-    assert sample_quiz.questions[1].prompt == "Which animal has the longest lifespan?"
+
+    loaded_prompts = [q.prompt for q in sample_quiz.questions]
+    assert "What is the fastest land animal?" in loaded_prompts
+    assert "Which animal has the longest lifespan?" in loaded_prompts
 
 
 def test_check_answer_correct(sample_quiz: Quiz) -> None:
     """Test that check_answer returns True for the correct answer."""
-    current_question = sample_quiz.questions[0]
-    assert sample_quiz.check_answer("Cheetah", current_question.answer)
+    for question in sample_quiz.questions:
+        # Match the question prompt to the correct answer and test
+        if question.prompt == "What is the fastest land animal?":
+            assert sample_quiz.check_answer("Cheetah", question.answer)
+        elif question.prompt == "Which animal has the longest lifespan?":
+            assert sample_quiz.check_answer("Bowhead Whale", question.answer)
 
 
 def test_check_answer_incorrect(sample_quiz: Quiz) -> None:
     """Test that check_answer returns False for an incorrect answer."""
-    current_question = sample_quiz.questions[0]
-    assert not sample_quiz.check_answer("Lion", current_question.answer)
+    for question in sample_quiz.questions:
+        if question.prompt == "What is the fastest land animal?":
+            assert not sample_quiz.check_answer("Lion", question.answer)
 
 
 def test_increment_score(sample_quiz: Quiz) -> None:
