@@ -9,6 +9,7 @@ from ui import (
     display_final_score,
     display_question,
     display_score_percentage,
+    display_version,
     initialize_session_state,
 )
 
@@ -32,6 +33,7 @@ def main() -> None:
 
     quiz.get_score_percentage()
     display_score_percentage()
+    display_version()
 
     if not quiz.is_quiz_complete():
         current_question = quiz.questions[quiz.current_question]
