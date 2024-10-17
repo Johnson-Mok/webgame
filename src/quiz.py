@@ -4,7 +4,7 @@ Contains the core logic for managing questions, displaying them, and calculating
 
 # import base64
 # import os
-from typing import Any, List
+from typing import Any, Dict, List
 
 
 class Question:
@@ -12,7 +12,7 @@ class Question:
     Represents a single quiz question with multiple-choice answers.
     """
 
-    def __init__(self, prompt: str, options: List[str], answer: int) -> None:
+    def __init__(self, prompt: str, options: List[str], answer: str) -> None:
         """
         Initializes a Question instance.
 
@@ -33,7 +33,7 @@ class Quiz:
         self.score_percentage: int = 0
         self.current_question: int = 0
 
-    def load_questions_from_list(self, questions_list: Any) -> None:
+    def load_questions_from_list(self, questions_list: List[Dict[str, Any]]) -> None:
         """
         Loads questions from a list of dictionaries and adds them to the quiz.
         """

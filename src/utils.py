@@ -14,11 +14,18 @@ def get_image_base64(image_path: str, image_cache: Dict[str, str]) -> Optional[s
     Returns:
         Optional[str]: The base64 encoded string of the image, or None if the image is not found.
     """
+    if not image_path:
+        return None
+
     if image_path in image_cache:
         return image_cache[image_path]
+
     if os.path.exists(image_path):
-        with open(image_path, "rb") as image_file:
-            encoded = base64.b64encode(image_file.read()).decode("utf-8")
-            image_cache[image_path] = encoded
-            return encoded
+        try:
+            with open(image_path, "rb") as image_file:
+                encoded = base64.b64encode(image_file.read()).decode("utf-8")
+                image_cache[image_path] = encoded
+                return encoded
+        except (OSError, IOError):  # Error reading the file
+            return None
     return None
