@@ -4,7 +4,6 @@
 1. [Collaborate](#collaborate)
    - [Prerequisites](#prerequisites)
    - [Project Setup](#project-setup)
-   - [Install Pre-commit Hooks](#install-pre-commit-hooks)
 2. [Build and Containerize the Web Game](#build-and-containerize-the-web-game)
    - [Steps to Build the Container](#steps-to-build-the-container)
 3. [Way of Working](#way-of-working)
