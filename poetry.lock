@@ -24,6 +24,17 @@ dev = ["geopandas", "hatch", "ibis-framework[polars]", "ipython[kernel]", "mistu
 doc = ["docutils", "jinja2", "myst-parser", "numpydoc", "pillow (>=9,<10)", "pydata-sphinx-theme (>=0.14.1)", "scipy", "sphinx", "sphinx-copybutton", "sphinx-design", "sphinxext-altair"]
 
 [[package]]
+name = "argparse"
+version = "1.4.0"
+description = "Python command-line parsing library"
+optional = false
+python-versions = "*"
+files = [
+    {file = "argparse-1.4.0-py2.py3-none-any.whl", hash = "sha256:c31647edb69fd3d465a847ea3157d37bed1f95f19760b11a47aa91c04b666314"},
+    {file = "argparse-1.4.0.tar.gz", hash = "sha256:62b089a55be1d8949cd2bc7e0df0bddb9e028faefc8c32038cc84862aefdd6e4"},
+]
+
+[[package]]
 name = "astroid"
 version = "3.3.5"
 description = "An abstract syntax tree for Python with inference support."
@@ -548,6 +559,17 @@ files = [
 
 [package.dependencies]
 referencing = ">=0.31.0"
+
+[[package]]
+name = "linecache2"
+version = "1.0.0"
+description = "Backports of the linecache module"
+optional = false
+python-versions = "*"
+files = [
+    {file = "linecache2-1.0.0-py2.py3-none-any.whl", hash = "sha256:e78be9c0a0dfcbac712fe04fbf92b96cddae80b1b842f24248214c8496f006ef"},
+    {file = "linecache2-1.0.0.tar.gz", hash = "sha256:4b26ff4e7110db76eeb6f5a7b64a82623839d595c2038eeda662f2a2db78e97c"},
+]
 
 [[package]]
 name = "markdown-it-py"
@@ -1625,6 +1647,20 @@ files = [
 ]
 
 [[package]]
+name = "traceback2"
+version = "1.4.0"
+description = "Backports of the traceback module"
+optional = false
+python-versions = "*"
+files = [
+    {file = "traceback2-1.4.0-py2.py3-none-any.whl", hash = "sha256:8253cebec4b19094d67cc5ed5af99bf1dba1285292226e98a31929f87a5d6b23"},
+    {file = "traceback2-1.4.0.tar.gz", hash = "sha256:05acc67a09980c2ecfedd3423f7ae0104839eccb55fc645773e1caa0951c3030"},
+]
+
+[package.dependencies]
+linecache2 = "*"
+
+[[package]]
 name = "typing-extensions"
 version = "4.12.2"
 description = "Backported and Experimental Type Hints for Python 3.8+"
@@ -1645,6 +1681,22 @@ files = [
     {file = "tzdata-2024.2-py2.py3-none-any.whl", hash = "sha256:a48093786cdcde33cad18c2555e8532f34422074448fbc874186f0abd79565cd"},
     {file = "tzdata-2024.2.tar.gz", hash = "sha256:7d85cc416e9382e69095b7bdf4afd9e3880418a2413feec7069d533d6b4e31cc"},
 ]
+
+[[package]]
+name = "unittest2"
+version = "1.1.0"
+description = "The new features in unittest backported to Python 2.4+."
+optional = false
+python-versions = "*"
+files = [
+    {file = "unittest2-1.1.0-py2.py3-none-any.whl", hash = "sha256:13f77d0875db6d9b435e1d4f41e74ad4cc2eb6e1d5c824996092b3430f088bb8"},
+    {file = "unittest2-1.1.0.tar.gz", hash = "sha256:22882a0e418c284e1f718a822b3b022944d53d2d908e1690b319a9d3eb2c0579"},
+]
+
+[package.dependencies]
+argparse = "*"
+six = ">=1.4"
+traceback2 = "*"
 
 [[package]]
 name = "urllib3"
@@ -1728,4 +1780,4 @@ watchmedo = ["PyYAML (>=3.10)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12.4"
-content-hash = "46d6782e05c4d046ba7a8298e9a347a98ed14d0903eac32b75c090a35583c7b0"
+content-hash = "33204224dc0aaa92c9186549cd7cb3cc5895d7dabd0d5450b52fe0ff4a3dcaab"

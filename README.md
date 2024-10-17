@@ -16,8 +16,8 @@ chmod +x run.sh
 
 ## Backlog
 ### Core
-- [ ] Score Tracking - Live Score Updates: Keep track of the player’s score as they answer questions.
-- [ ] Score Tracking - Improve Aesthetics of Final Score Display
+- [X] Score Tracking - Live Score Updates: Keep track of the player’s score as they answer questions.
+- [X] Score Tracking - Improve Aesthetics of Final Score Display
 - [ ] Question Randomization - Random Question Order: Shuffle the order of questions each time the quiz starts.
 
 ### Enhance User Engagement
