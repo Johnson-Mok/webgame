@@ -1,20 +1,6 @@
 import streamlit as st
 
-from questions import QUESTIONS
-from quiz import Quiz
-
-
-def initialize_session_state() -> None:
-    if "current_question" not in st.session_state:
-        st.session_state.current_question = 0
-    if "score" not in st.session_state:
-        st.session_state.score = 0
-    if "quiz" not in st.session_state:
-        st.session_state.quiz = Quiz()
-    if "questions" not in st.session_state:
-        st.session_state.questions = st.session_state.quiz.load_questions_from_list(
-            QUESTIONS
-        )
+from ui import display_score_percentage, initialize_session_state
 
 
 def main() -> None:
@@ -31,6 +17,7 @@ def main() -> None:
     initialize_session_state()
     st.title("Quiz")
     st.divider()
+    display_score_percentage()
 
     st.session_state.quiz.start()
 
