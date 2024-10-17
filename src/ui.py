@@ -54,8 +54,6 @@ def display_score_percentage() -> None:
             unsafe_allow_html=True,
         )
 
-        st.write(st.session_state)  # DEBUG
-
 
 def display_final_score() -> None:
     st.markdown(
