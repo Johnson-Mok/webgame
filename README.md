@@ -18,13 +18,13 @@ chmod +x run.sh
 ### Core
 - [X] Score Tracking - Live Score Updates: Keep track of the player’s score as they answer questions.
 - [X] Score Tracking - Improve Aesthetics of Final Score Display
-- [ ] Question Randomization - Random Question Order: Shuffle the order of questions each time the quiz starts.
+- [X] Question Randomization - Random Question Order: Shuffle the order of questions each time the quiz starts.
 
 ### Enhance User Engagement
 - [ ] Feedback for Each Question - Improve Aesthetics of Instant Feedback: Show whether the selected answer is correct or incorrect immediately after a user submits.
 - [ ] Feedback for Each Question - Explanation: Provide a brief explanation after each question about the correct answer, helping with learning.
 - [ ] Progress Tracking - Progress Bar: Show a progress bar indicating how far the user is through the quiz (e.g., “Question 5 of 10”).
-- [ ] Question Randomization - Randomized Options: Shuffle the multiple-choice options for each question to avoid memorization of answers.
+- [X] Question Randomization - Randomized Options: Shuffle the multiple-choice options for each question to avoid memorization of answers.
 - [ ] Visual and Audio Feedback - Visual Feedback: Use colors (e.g., green for correct, red for wrong) and animations to enhance the experience.
 - [ ] Visual and Audio Feedback - Sound Effects: Add sound effects for correct or incorrect answers (optional, but can be fun).
 - [ ] Score Tracking - Score History: Store and display scores from previous attempts.

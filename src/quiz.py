@@ -2,8 +2,7 @@
 Contains the core logic for managing questions, displaying them, and calculating the score.
 """
 
-# import base64
-# import os
+import random
 from typing import Any, Dict, List
 
 
@@ -38,12 +37,16 @@ class Quiz:
         Loads questions from a list of dictionaries and adds them to the quiz.
         """
         for question_data in questions_list:
+            options = question_data["options"]
+            random.shuffle(options)
             question = Question(
                 question_data["prompt"],
-                [(opt[1], opt[0]) for opt in question_data["options"]],  # type: ignore
+                [(opt[1], opt[0]) for opt in options],  # type: ignore
                 question_data["answer"],
             )
             self.questions.append(question)
+
+        random.shuffle(self.questions)
 
     def check_answer(self, selected_choice: str, correct_answer: str) -> bool:
         """Checks if the selected choice is the correct answer."""

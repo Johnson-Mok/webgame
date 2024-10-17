@@ -1367,6 +1367,17 @@ files = [
 ]
 
 [[package]]
+name = "random2"
+version = "1.0.2"
+description = "Python 3 compatible Python 2 `random` Module."
+optional = false
+python-versions = "*"
+files = [
+    {file = "random2-1.0.2-py3-none-any.whl", hash = "sha256:c2b92ac9d28f94d3759075302c12f94e3dcc09f2d1c9e9f65fdbbb1d6b710024"},
+    {file = "random2-1.0.2.tar.gz", hash = "sha256:3754fcef48267567cd5705fa7da6bbc3809cb3f808740313e6705acc3c057e77"},
+]
+
+[[package]]
 name = "referencing"
 version = "0.35.1"
 description = "JSON Referencing + Python"
@@ -1780,4 +1791,4 @@ watchmedo = ["PyYAML (>=3.10)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12.4"
-content-hash = "33204224dc0aaa92c9186549cd7cb3cc5895d7dabd0d5450b52fe0ff4a3dcaab"
+content-hash = "b88efe7224fc80d1c17f818d36608289b8ea9212311989898554c8ff7c166b3f"
