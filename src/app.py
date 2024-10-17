@@ -1,6 +1,16 @@
+"""
+Orchestrates the quiz by initializing the session, updating the score, and starting the quiz.
+"""
+
 import streamlit as st
 
-from ui import display_score_percentage, initialize_session_state
+from ui import (
+    display_choices,
+    display_final_score,
+    display_question,
+    display_score_percentage,
+    initialize_session_state,
+)
 
 
 def main() -> None:
@@ -15,11 +25,20 @@ def main() -> None:
        the final score.
     """
     initialize_session_state()
+    quiz = st.session_state.quiz
+
     st.title("Quiz")
     st.divider()
+
+    quiz.get_score_percentage()
     display_score_percentage()
 
-    st.session_state.quiz.start()
+    if not quiz.is_quiz_complete():
+        current_question = quiz.questions[quiz.current_question]
+        display_question(current_question.prompt)
+        display_choices(quiz, current_question)
+    else:
+        display_final_score()
 
 
 if __name__ == "__main__":
