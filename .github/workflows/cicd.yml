@@ -79,6 +79,7 @@ jobs:
 
     - name: Build and push Docker image to Docker Hub
       env:
+        DOCKER_USER: ${{ secrets.DOCKER_USER }}
         IMAGE_NAME: streamlit-quiz-app
       run: |
         docker build -t ${{ env.DOCKER_USER }}/${{ env.IMAGE_NAME }}:latest .
