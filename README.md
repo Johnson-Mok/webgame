@@ -83,12 +83,11 @@ By following these guidelines, we can maintain a clean, organized, and effective
 
 ![CI/CD Pipeline Overview](images/webgame_CICD_overview.jpg)
 
-
 ## Backlog
 
 ### Pipeline
-- [ ] Deployment: Automate the process of deploying the application to various environments (e.g., development, staging, production). This ensures consistent and reliable deployment with minimal manual intervention.
-- [ ] Push application to hosting server: Set up and configure the application to be deployed to a hosting server (e.g., AWS, Azure, Heroku) and ensure it is accessible and fully functional. Automate future deployments to this server.
+- [X] Deployment: Automate the process of deploying the application to various environments (e.g., development, staging, production). This ensures consistent and reliable deployment with minimal manual intervention.
+- [X] Push application to hosting server: Set up and configure the application to be deployed to a hosting server (e.g., AWS, Azure, Heroku) and ensure it is accessible and fully functional. Automate future deployments to this server.
 
 ### Core
 - [X] Score Tracking - Live Score Updates: Keep track of the player’s score as they answer questions.
