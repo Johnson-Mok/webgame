@@ -89,7 +89,7 @@ jobs:
 
       - name: Build and push Docker image to Docker Hub
         env:
-          IMAGE_NAME: streamlit-quiz-app-DEV
+          IMAGE_NAME: streamlit-quiz-app-dev
         run: |
           docker build -t ${{ secrets.DOCKER_USER }}/${{ env.IMAGE_NAME }}:latest .
           docker push ${{ secrets.DOCKER_USER }}/${{ env.IMAGE_NAME }}:latest
@@ -113,7 +113,7 @@ jobs:
 
     - name: Build and push Docker image to Docker Hub
       env:
-        IMAGE_NAME: streamlit-quiz-app-PRD
+        IMAGE_NAME: streamlit-quiz-app-prd
       run: |
         docker build -t ${{ secrets.DOCKER_USER }}/${{ env.IMAGE_NAME }}:latest .
         docker push ${{ secrets.DOCKER_USER }}/${{ env.IMAGE_NAME }}:latest
