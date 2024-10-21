@@ -98,7 +98,7 @@ jobs:
         run: npm i -g @railway/cli
 
       - name: Deploy to Railway
-        run: railway up
+        run: railway up --service enthusiastic-spirit
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN_DEV }}
           RAILWAY_PROJECT_ID: ${{ secrets.PROJECT_ID }}
@@ -132,7 +132,7 @@ jobs:
       run: npm i -g @railway/cli
 
     - name: Deploy to Railway
-      run: railway up --project-id ${{ secrets.PROJECT_ID }} --environment production
+      run: railway up --service enthusiastic-spirit
       env:
         RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN_PRD }}
         RAILWAY_PROJECT_ID: ${{ secrets.PROJECT_ID }}
