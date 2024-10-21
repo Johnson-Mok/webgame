@@ -81,6 +81,8 @@ When contributing to this project, follow these Git guidelines to ensure a smoot
 
 By following these guidelines, we can maintain a clean, organized, and effective workflow across the project.
 
+![CI/CD Pipeline Overview](images/webgame_CICD_overview.jpg)
+
 
 ## Backlog
 
