@@ -94,6 +94,9 @@ jobs:
           docker build -t ${{ secrets.DOCKER_USER }}/${{ env.IMAGE_NAME }}:latest .
           docker push ${{ secrets.DOCKER_USER }}/${{ env.IMAGE_NAME }}:latest
 
+      - name: Install Railway
+        run: npm i -g @railway/cli
+
       - name: Deploy to Railway
         run: railway up
         env:
@@ -122,6 +125,9 @@ jobs:
       run: |
         docker build -t ${{ secrets.DOCKER_USER }}/${{ env.IMAGE_NAME }}:latest .
         docker push ${{ secrets.DOCKER_USER }}/${{ env.IMAGE_NAME }}:latest
+
+    - name: Install Railway
+      run: npm i -g @railway/cli
 
     - name: Deploy to Railway
       run: railway up
