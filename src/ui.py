@@ -2,6 +2,9 @@
 Handles the user interface components like displaying the score percentage, final score, and initializing session state.
 """
 
+from datetime import datetime
+
+import pytz  # type: ignore
 import streamlit as st
 
 from questions import QUESTIONS
@@ -51,6 +54,26 @@ def display_score_percentage() -> None:
                 <strong>Score: {st.session_state.quiz.score_percentage}%</strong>
             </div>
             """,
+            unsafe_allow_html=True,
+        )
+
+
+def display_version() -> None:
+    amsterdam_tz = pytz.timezone("Europe/Amsterdam")
+    amsterdam_time = datetime.now(amsterdam_tz)
+    formatted_time = amsterdam_time.strftime("%Y-%m-%d %H:%M:%S %Z")
+
+    # Display in the sidebar with enhanced aesthetics
+    with st.sidebar:
+        st.markdown(
+            """
+            <div style="background-color:#f0f0f5; padding: 10px; border-radius: 10px; text-align: center;">
+                <h4 style="color:#4B8BBE; font-size:26px;">App Version</h4>
+                <p style="font-size:20px; color:#333333;">{}</p>
+            </div>
+            """.format(
+                formatted_time
+            ),
             unsafe_allow_html=True,
         )
 
