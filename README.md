@@ -15,6 +15,10 @@
    - [Additional Features](#additional-features)
    - [Advanced Gamification](#advanced-gamification)
 
+## Game in browser
+- [Development](https://enthusiastic-spirit-development.up.railway.app/)
+- [Production](https://enthusiastic-spirit-production.up.railway.app/)
+
 ## Collaborate
 
 ### Prerequisites
